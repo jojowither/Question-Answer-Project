@@ -1,0 +1,10 @@
+.python-version
+__pycache__
+runs
+data/
+output/
+
+# server
+logs/
+engine_serve_mars/
+tmp/
