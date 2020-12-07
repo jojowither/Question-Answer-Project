@@ -15,7 +15,7 @@ from transformers import AutoModelForQuestionAnswering
 
 from preprocessing import load_and_cache_examples
 from utils import to_list
-from chinese_squad_evaluate import squad_evaluate, detail_evaluate
+from chinese_squad_evaluate import squad_evaluate
 
 logger = logging.getLogger(__name__)
 
@@ -158,11 +158,8 @@ def evaluate(args, model, tokenizer, prefix=""):
             tokenizer,
         )
 
-    if args.do_detail_eval:
-        results = detail_evaluate(examples, predictions)
-    else: 
-        # Compute the F1 and exact scores.
-        results = squad_evaluate(examples, predictions)
+    # Compute the F1 and exact scores.
+    results = squad_evaluate(examples, predictions)
     return results
 
 
@@ -202,12 +199,11 @@ def do_eval(args, tokenizer):
                             for k, v in result.items())
                 results.update(result)
     
-    if args.do_detail_eval == False:
-        logger.info("Results: {}".format(results))
-        output_result_file = os.path.join(args.output_dir, "result.txt")
+    logger.info("Results: {}".format(results))
+    output_result_file = os.path.join(args.output_dir, "result.txt")
 
-        with open(output_result_file, 'a') as outfile:
-            outfile.write(f"model path: {args.model_name_or_path}\n")
-            outfile.write(f"predict file: {args.predict_file}\n")
-            outfile.write(str(results)+'\n\n')
+    with open(output_result_file, 'a') as outfile:
+        outfile.write(f"model path: {args.model_name_or_path}\n")
+        outfile.write(f"predict file: {args.predict_file}\n")
+        outfile.write(str(results)+'\n\n')
         

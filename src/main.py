@@ -338,8 +338,6 @@ def main():
     parser.add_argument("--threads", type=int, default=1,
                         help="multiple threads for converting example to features")
     
-    parser.add_argument("--do_detail_eval", action="store_true",
-                        help="Whether to run detail eval on the dev set.")
     args = parser.parse_args()
 
     # ===========================================================================
