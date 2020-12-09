@@ -4,7 +4,7 @@
 DRCD
 https://github.com/DRCKnowledgeTeam/DRCD
 
-Put the data to `question_answer_project/data`
+Put the data to `Question-Answer-Project/data`
 
 
 ## Environment
@@ -33,7 +33,7 @@ pip install streamlit
 
 ## Directory
 ```bash
-~/question_answer_project
+~/Question-Answer-Project
 ├── data
 │   ├── DRCD_dev.json
 │   ├── DRCD_test.json
@@ -103,17 +103,17 @@ pip install streamlit
 
 ## Usage
 
-Store your data to `~/question_answer_project/data/`.
+Store your data to `~/Question-Answer-Project/data/`.
 
 ### Train The Model
 
 ```bash
-cd ~/question_answer_project/src
+cd ~/Question-Answer-Project/src
 bash scripts/run_squad.bash
 ```
 You can modify the args in `run_squad.bash` to fit your task.
 
-The checkpoint will be saved on the `~/question_answer_project/output/`.
+The checkpoint will be saved on the `~/Question-Answer-Project/output/`.
 
 <br>
 ---
@@ -121,7 +121,7 @@ The checkpoint will be saved on the `~/question_answer_project/output/`.
 ### Use Tensorboard 
 
 ```bash
-cd ~/question_answer_project/src
+cd ~/Question-Answer-Project/src
 bash scripts/run_tensorboard.bash
 ```
 Always use the latest tensboard file.
@@ -132,13 +132,13 @@ Always use the latest tensboard file.
 ### Evaluate The Dev Set
 
 ```bash
-cd ~/question_answer_project/src
+cd ~/Question-Answer-Project/src
 bash scripts/run_eval.bash
 ```
 
 Pay attention to modify the `model_name_or_path` arg to your trained model.
 
-The eval result will be saved on `~/question_answer_project/output/result.txt`, and the eval metrics will be appended to the last line of the file.
+The eval result will be saved on `~/Question-Answer-Project/output/result.txt`, and the eval metrics will be appended to the last line of the file.
 
 <br>
 ---
@@ -146,7 +146,7 @@ The eval result will be saved on `~/question_answer_project/output/result.txt`, 
 ### Plot the Curves of Loss and F1
 
 ```bash
-cd ~/question_answer_project/src
+cd ~/Question-Answer-Project/src
 python plot_tensorboard.py
 ```
 
@@ -160,15 +160,15 @@ It will plot the curves of loss and F1 of latest tensorboard, and save the imgs 
 ### Inference
 
 ```bash
-cd ~/question_answer_project/src
+cd ~/Question-Answer-Project/src
 python inference.py
 ```
 
 I provide a easy inference interface to infer the content about health care with fixed questions.
 
-All the content you want to input, the model directory, the questions, the output file path can be modify on `~/question_answer_project/src/config/inference_config.yaml`.
+All the content you want to input, the model directory, the questions, the output file path can be modify on `~/Question-Answer-Project/src/config/inference_config.yaml`.
 
-If default, the output will be saved on `~/question_answer_project/output/inference_example.json`. The latest inference result will be appended to the last line of the file.
+If default, the output will be saved on `~/Question-Answer-Project/output/inference_example.json`. The latest inference result will be appended to the last line of the file.
 
 In the file, the `Confidence` means the output of model calculated by `softmax`.
 
@@ -178,7 +178,7 @@ In the file, the `Confidence` means the output of model calculated by `softmax`.
 ### Start the QA Server
 
 ```bash
-cd ~/question_answer_project/server
+cd ~/Question-Answer-Project/server
 bash scripts/server_start.bash
 ```
 
@@ -194,7 +194,7 @@ bash scripts/test.bash
 ### Demo the Server on the Web
 
 ```bash
-cd ~/question_answer_project/web
+cd ~/Question-Answer-Project/web
 bash run_app.bash
 ```
 
