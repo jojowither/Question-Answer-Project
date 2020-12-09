@@ -21,7 +21,6 @@ def type_context():
     return context
 
 
-###### 改標題，換branch
 def type_questions():
     question_num = st.text_input("How many questions you want to ask?")
     if question_num=='':
