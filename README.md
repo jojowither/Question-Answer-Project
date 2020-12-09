@@ -140,15 +140,6 @@ Pay attention to modify the `model_name_or_path` arg to your trained model.
 
 The eval result will be saved on `~/question_answer_project/output/result.txt`, and the eval metrics will be appended to the last line of the file.
 
-If you want the detail evaluation metrics, i.e., the F1, precision, recall of each data, you should run the `scripts/run_detail_eval.bash`. It adds the `do_detail_eval` flag in the args.
-
-```bash 
-cd ~/question_answer_project/src
-bash scripts/run_detail_eval.bash
-```
-
-And the datail evaluation file will create on `~/question_answer_project/output/detail_eval.xlsx`.
-
 <br>
 ---
 
