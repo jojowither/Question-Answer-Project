@@ -1,7 +1,9 @@
 import random
+import time
+
 import numpy as np
 import torch
-import time
+
 
 def set_seed(args):
     random.seed(args.seed)

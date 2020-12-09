@@ -1,10 +1,11 @@
-import os
 import logging
+import os
 from pathlib import Path
 
 import torch
-from transformers.data.processors.squad import SquadResult, SquadV1Processor, SquadV2Processor
 from transformers import squad_convert_examples_to_features
+from transformers.data.processors.squad import (SquadResult, SquadV1Processor,
+                                                SquadV2Processor)
 
 logger = logging.getLogger(__name__)
 

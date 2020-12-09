@@ -1,10 +1,13 @@
-import numpy as np
 from pathlib import Path
-from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
-import matplotlib.pyplot as plt
-import matplotlib
-from imgcat import imgcat
 from pprint import pprint
+
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+from imgcat import imgcat
+from tensorboard.backend.event_processing.event_accumulator import \
+    EventAccumulator
+
 matplotlib.use("module://imgcat")
 
 

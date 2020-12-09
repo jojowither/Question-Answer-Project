@@ -1,21 +1,18 @@
-import os
-import torch
 import logging
+import os
 import timeit
-from tqdm import tqdm, trange
 
+import torch
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from transformers.data.processors.squad import SquadResult
-from transformers.data.metrics.squad_metrics import (
-    compute_predictions_log_probs,
-    compute_predictions_logits,
-    # squad_evaluate,
-)
+from tqdm import tqdm, trange
 from transformers import AutoModelForQuestionAnswering
+from transformers.data.metrics.squad_metrics import (  # squad_evaluate,
+    compute_predictions_log_probs, compute_predictions_logits)
+from transformers.data.processors.squad import SquadResult
 
+from chinese_squad_evaluate import squad_evaluate
 from preprocessing import load_and_cache_examples
 from utils import to_list
-from chinese_squad_evaluate import squad_evaluate
 
 logger = logging.getLogger(__name__)
 

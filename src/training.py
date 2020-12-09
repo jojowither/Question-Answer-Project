@@ -1,23 +1,18 @@
 import logging
 import os
-from tqdm import tqdm, trange
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from torch.utils.data.distributed import DistributedSampler
-from transformers import (
-    MODEL_FOR_QUESTION_ANSWERING_MAPPING,
-    WEIGHTS_NAME,
-    AdamW,
-    AutoConfig,
-    AutoModelForQuestionAnswering,
-    AutoTokenizer,
-    get_linear_schedule_with_warmup,
-    squad_convert_examples_to_features,
-)
+from tqdm import tqdm, trange
+from transformers import (MODEL_FOR_QUESTION_ANSWERING_MAPPING, WEIGHTS_NAME,
+                          AdamW, AutoConfig, AutoModelForQuestionAnswering,
+                          AutoTokenizer, get_linear_schedule_with_warmup,
+                          squad_convert_examples_to_features)
+
+from evaluate import evaluate
 from preprocessing import load_and_cache_examples
 from utils import set_seed
-from evaluate import evaluate
 
 try:
     from torch.utils.tensorboard import SummaryWriter

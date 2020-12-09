@@ -7,20 +7,14 @@ import timeit
 
 import numpy as np
 import torch
-from transformers import (
-    MODEL_FOR_QUESTION_ANSWERING_MAPPING,
-    WEIGHTS_NAME,
-    AdamW,
-    AutoConfig,
-    AutoModelForQuestionAnswering,
-    AutoTokenizer,
-    get_linear_schedule_with_warmup,
-    squad_convert_examples_to_features,
-)
-from utils import set_seed
-from training import do_train
-from evaluate import do_eval
+from transformers import (MODEL_FOR_QUESTION_ANSWERING_MAPPING, WEIGHTS_NAME,
+                          AdamW, AutoConfig, AutoModelForQuestionAnswering,
+                          AutoTokenizer, get_linear_schedule_with_warmup,
+                          squad_convert_examples_to_features)
 
+from evaluate import do_eval
+from training import do_train
+from utils import set_seed
 
 logger = logging.getLogger(__name__)
 

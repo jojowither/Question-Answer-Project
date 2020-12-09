@@ -1,14 +1,17 @@
-from transformers import AutoTokenizer, AutoModelForQuestionAnswering, BertConfig
-import torch
-from torch.utils.data import DataLoader
-from torch.nn import functional as F
-from pathlib import Path
-import json
 import collections
-from utils import time_count_wrapper, chunks_ques_wrapper
+import json
+from pathlib import Path
+
+import torch
 import yaml
-from torchsummary import summary
 from fire import Fire
+from torch.nn import functional as F
+from torch.utils.data import DataLoader
+from torchsummary import summary
+from transformers import (AutoModelForQuestionAnswering, AutoTokenizer,
+                          BertConfig)
+
+from utils import chunks_ques_wrapper, time_count_wrapper
 
 with open('config/inference_config.yaml', 'r') as stream:
     config = yaml.load(stream, Loader=yaml.FullLoader)

@@ -3,12 +3,11 @@ import json
 import math
 import re
 import string
+
 import pandas as pd
 import yaml
-
 from transformers.tokenization_bert import BasicTokenizer
 from transformers.utils import logging
-
 
 logger = logging.get_logger(__name__)
 
