@@ -22,7 +22,10 @@ eval "$(direnv hook zsh)"
 
 ```bash 
 # pytorch
-pip install torch torchvision
+pip install torch==1.7.0
+pip install torchvision==0.8.1
+# transformers
+pip install transformers==3.4.0
 # torchserve
 sudo apt-get install openjdk-11-jdk
 pip install torchserve torch-model-archiver
@@ -186,6 +189,12 @@ If you want to check the API, you can run scripts below.
 
 ```bash
 bash scripts/test.bash
+```
+
+If you want to test the handler without using torchserve, I provide a interface to test it with dummy request.
+```bash
+cd ~/Question-Answer-Project
+python server/handlers/qa_handler.py 
 ```
 
 <br>
